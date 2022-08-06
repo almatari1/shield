@@ -1,11 +1,11 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Facades;
+namespace MaherAlmatari\FilamentShield\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \BezhanSalleh\FilamentShield\FilamentShield
+ * @see \MaherAlmatari\FilamentShield\FilamentShield
  */
 class FilamentShield extends Facade
 {

@@ -7,18 +7,26 @@ return [
         'navigation_badge' => true
     ],
 
+    'navigation' => [
+        'group' => 'Account',
+    ],
+
+
     'auth_provider_model' => [
         'fqcn' => 'App\\Models\\User'
     ],
 
     'super_admin' => [
         'enabled' => true,
-        'name'  => 'super_admin'
+         "name" =>  json_encode(['en' => 'super_admin', 'ar' => 'super_admin']),
+
     ],
+
 
     'filament_user' => [
         'enabled' => true,
-        'name' => 'filament_user'
+        "name" =>  json_encode(['en' => 'filament_user', 'ar' => 'filament_user']),
+
     ],
 
     'permission_prefixes' => [

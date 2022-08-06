@@ -1,6 +1,6 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield;
+namespace MaherAlmatari\FilamentShield;
 
 use Filament\Facades\Filament;
 use Illuminate\Support\Collection;

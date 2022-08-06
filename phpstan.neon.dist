@@ -14,8 +14,8 @@ parameters:
             - src/Resources/RoleResource/Pages/EditRole.php
     ignoreErrors:
         - '#PHPDoc tag @var#'
-        - '#Call to method getModel\(\) on an unknown class BezhanSalleh\\FilamentShield\\Commands\\EloquentUserProvider#'
-        - '#Call to method getProvider\(\) on an unknown class BezhanSalleh\\FilamentShield\\Commands\\SessionGuard#'
+        - '#Call to method getModel\(\) on an unknown class MaherAlmatari\\FilamentShield\\Commands\\EloquentUserProvider#'
+        - '#Call to method getProvider\(\) on an unknown class MaherAlmatari\\FilamentShield\\Commands\\SessionGuard#'
         -
             message: '#Call to an undefined static method [a-zA-Z0-9\\_]+::whereName\(\)#'
             path: src/Commands/MakeShieldSuperAdminCommand.php

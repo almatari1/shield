@@ -1,8 +1,8 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Tests;
+namespace MaherAlmatari\FilamentShield\Tests;
 
-use BezhanSalleh\FilamentShield\FilamentShieldServiceProvider;
+use MaherAlmatari\FilamentShield\FilamentShieldServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -14,7 +14,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'BezhanSalleh\\FilamentShield\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'MaherAlmatari\\FilamentShield\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

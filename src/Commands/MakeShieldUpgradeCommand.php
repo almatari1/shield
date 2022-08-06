@@ -1,6 +1,6 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Commands;
+namespace MaherAlmatari\FilamentShield\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;

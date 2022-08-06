@@ -1,6 +1,6 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Traits;
+namespace MaherAlmatari\FilamentShield\Traits;
 
 use Filament\Facades\Filament;
 use Illuminate\Support\Str;

@@ -1,8 +1,8 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Commands;
+namespace MaherAlmatari\FilamentShield\Commands;
 
-use BezhanSalleh\FilamentShield\FilamentShield;
+use MaherAlmatari\FilamentShield\FilamentShield;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;

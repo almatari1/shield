@@ -1,8 +1,8 @@
 {
-    "name": "bezhansalleh/filament-shield",
+    "name": "maheralmatari/filament-shield",
     "description": "Filament support for `spatie/laravel-permission`.",
     "keywords": [
-        "bezhanSalleh",
+        "MaherAlmatari",
         "laravel",
         "filament",
         "filament-shield",
@@ -13,12 +13,12 @@
         "rbac",
         "security"
     ],
-    "homepage": "https://github.com/bezhansalleh/filament-shield",
+    "homepage": "https://github.com/almatari1/filament-shield",
     "license": "MIT",
     "authors": [
         {
-            "name": "Bezhan Salleh",
-            "email": "bezhan_salleh@yahoo.com",
+            "name": "Maher Almatari",
+            "email": "maheralmatri@gmail.com",
             "role": "Developer"
         }
     ],
@@ -45,13 +45,13 @@
     },
     "autoload": {
         "psr-4": {
-            "BezhanSalleh\\FilamentShield\\": "src",
-            "BezhanSalleh\\FilamentShield\\Database\\Factories\\": "database/factories"
+            "MaherAlmatari\\FilamentShield\\": "src",
+            "MaherAlmatari\\FilamentShield\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BezhanSalleh\\FilamentShield\\Tests\\": "tests"
+            "MaherAlmatari\\FilamentShield\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -70,10 +70,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "BezhanSalleh\\FilamentShield\\FilamentShieldServiceProvider"
+                "MaherAlmatari\\FilamentShield\\FilamentShieldServiceProvider"
             ],
             "aliases": {
-                "FilamentShield": "BezhanSalleh\\FilamentShield\\Facades\\FilamentShield"
+                "FilamentShield": "MaherAlmatari\\FilamentShield\\Facades\\FilamentShield"
             }
         }
     },

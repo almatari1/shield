@@ -1,8 +1,8 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Commands;
+namespace MaherAlmatari\FilamentShield\Commands;
 
-use BezhanSalleh\FilamentShield\Commands\Concerns\CanValidateInput;
+use MaherAlmatari\FilamentShield\Commands\Concerns\CanValidateInput;
 use Filament\Facades\Filament;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;

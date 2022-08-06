@@ -1,8 +1,8 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Commands;
+namespace MaherAlmatari\FilamentShield\Commands;
 
-use BezhanSalleh\FilamentShield\Support\Utils;
+use MaherAlmatari\FilamentShield\Support\Utils;
 use Composer\InstalledVersions;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Console\AboutCommand;
@@ -22,7 +22,7 @@ class MakeShieldDoctorCommand extends Command
                 'Resource Sort' => Utils::getResourceNavigationSort(),
                 'Resource Badge' => Utils::isResourceNavigationBadgeEnabled() ? '<fg=green;options=bold>ENABLED</>' : '<fg=red;options=bold>DISABLED</>',
                 'Translations' => is_dir(resource_path('resource/lang/vendor/filament-shield')) ? '<fg=red;options=bold>PUBLISHED</>' : '<fg=green;options=bold>NOT PUBLISHED</>',
-                'Version' => InstalledVersions::getPrettyVersion('bezhansalleh/filament-shield'),
+                'Version' => InstalledVersions::getPrettyVersion('MaherAlmatari/filament-shield'),
                 'Views' => is_dir(resource_path('views/vendor/filament-shield')) ? '<fg=red;options=bold>PUBLISHED</>' : '<fg=green;options=bold>NOT PUBLISHED</>',
             ]);
         }
@@ -37,7 +37,7 @@ class MakeShieldDoctorCommand extends Command
     protected static function authProviderConfigured()
     {
         if (class_exists(Utils::getAuthProviderFQCN())) {
-            return in_array("BezhanSalleh\FilamentShield\Traits\HasFilamentShield", class_uses(Utils::getAuthProviderFQCN()))
+            return in_array("MaherAlmatari\FilamentShield\Traits\HasFilamentShield", class_uses(Utils::getAuthProviderFQCN()))
             || in_array("Spatie\Permission\Traits\HasRoles", class_uses(Utils::getAuthProviderFQCN()))
                 ? '<fg=green;options=bold>CONFIGURED</>'
                 : '<fg=red;options=bold>NOT CONFIGURED</>' ;

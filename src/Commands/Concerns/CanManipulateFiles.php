@@ -1,6 +1,6 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Commands\Concerns;
+namespace MaherAlmatari\FilamentShield\Commands\Concerns;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;

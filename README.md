@@ -1,4 +1,4 @@
-<a href="https://github.com/bezhansalleh/filament-shield">
+<a href="https://github.com/MaherAlmatari/filament-shield">
 <img style="width: 100%; max-width: 100%;" alt="filament-shield-art" src="https://user-images.githubusercontent.com/10007504/148662315-35d4bd74-fc1c-4f8c-8c02-689309b414b0.png" >
 </a>
 
@@ -6,18 +6,18 @@
     <a href="https://filamentadmin.com/docs/2.x/admin/installation">
         <img alt="FILAMENT 8.x" src="https://img.shields.io/badge/FILAMENT-2.x-EBB304?style=for-the-badge">
     </a>
-    <a href="https://packagist.org/packages/bezhansalleh/filament-shield">
-        <img alt="Packagist" src="https://img.shields.io/packagist/v/bezhansalleh/filament-shield.svg?style=for-the-badge&logo=packagist">
+    <a href="https://packagist.org/packages/MaherAlmatari/filament-shield">
+        <img alt="Packagist" src="https://img.shields.io/packagist/v/MaherAlmatari/filament-shield.svg?style=for-the-badge&logo=packagist">
     </a>
-    <a href="https://github.com/bezhansalleh/filament-shield/actions?query=workflow%3Arun-tests+branch%3Amain">
-        <img alt="Tests Passing" src="https://img.shields.io/github/workflow/status/bezhansalleh/filament-shield/run-tests?style=for-the-badge&logo=github&label=tests">
+    <a href="https://github.com/MaherAlmatari/filament-shield/actions?query=workflow%3Arun-tests+branch%3Amain">
+        <img alt="Tests Passing" src="https://img.shields.io/github/workflow/status/MaherAlmatari/filament-shield/run-tests?style=for-the-badge&logo=github&label=tests">
     </a>
-    <a href="https://github.com/bezhansalleh/filament-shield/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain">
-        <img alt="Code Style Passing" src="https://img.shields.io/github/workflow/status/bezhansalleh/filament-shield/run-tests?style=for-the-badge&logo=github&label=code%20style">
+    <a href="https://github.com/MaherAlmatari/filament-shield/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain">
+        <img alt="Code Style Passing" src="https://img.shields.io/github/workflow/status/MaherAlmatari/filament-shield/run-tests?style=for-the-badge&logo=github&label=code%20style">
     </a>
 
-<a href="https://packagist.org/packages/bezhansalleh/filament-shield">
-    <img alt="Downloads" src="https://img.shields.io/packagist/dt/bezhansalleh/filament-shield.svg?style=for-the-badge" >
+<a href="https://packagist.org/packages/MaherAlmatari/filament-shield">
+    <img alt="Downloads" src="https://img.shields.io/packagist/dt/MaherAlmatari/filament-shield.svg?style=for-the-badge" >
     </a>
 </p>
 
@@ -65,13 +65,13 @@ composer update
         ```
 
 > **Note**
-> for **Filament** prior to 2.13 use [v1.1.12](https://github.com/bezhanSalleh/filament-shield/releases/tag/v1.1.12)
+> for **Filament** prior to 2.13 use [v1.1.12](https://github.com/MaherAlmatari/filament-shield/releases/tag/v1.1.12)
 ## Installation
 
 1. Install the package via composer:
 
 ```bash
-composer require bezhansalleh/filament-shield
+composer require MaherAlmatari/filament-shield
 ```
 
 2. Add the `Spatie\Permission\Traits\HasRoles` trait to your User model(s):
@@ -187,7 +187,7 @@ If you have generated permissions for `Pages` you can toggle the page's navigati
 namespace App\Filament\Pages;
 
 use ...;
-use BezhanSalleh\FilamentShield\Traits\HasPageShield;
+use MaherAlmatari\FilamentShield\Traits\HasPageShield;
 
 class MyPage extends Page
 {
@@ -208,7 +208,7 @@ However if you need to perform some methods before and after the booted method y
 namespace App\Filament\Pages;
 
 use ...;
-use BezhanSalleh\FilamentShield\Traits\HasPageShield;
+use MaherAlmatari\FilamentShield\Traits\HasPageShield;
 
 class MyPage extends Page
 {
@@ -243,7 +243,7 @@ class MyPage extends Page
 namespace App\Filament\Pages;
 
 use ...;
-use BezhanSalleh\FilamentShield\Traits\HasPageShield;
+use MaherAlmatari\FilamentShield\Traits\HasPageShield;
 
 class MyPage extends Page
 {
@@ -264,7 +264,7 @@ if you have generated permissions for `Widgets` you can toggle their state based
 namespace App\Filament\Widgets;
 
 use ...;
-use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
+use MaherAlmatari\FilamentShield\Traits\HasWidgetShield;
 
 class IncomeWidget extends LineChartWidget
 {
@@ -329,7 +329,7 @@ Install the packages in your app's `composer.json`:
 
 ```json
 "require": {
-    "bezhansalleh/filament-shield": "dev-fix/error-message as main-dev",
+    "MaherAlmatari/filament-shield": "dev-fix/error-message as main-dev",
 },
 "repositories": [
     {
@@ -350,7 +350,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Bezhan Salleh](https://github.com/bezhanSalleh)
+- [Bezhan Salleh](https://github.com/MaherAlmatari)
 - [All Contributors](../../contributors)
 
 ## License

@@ -1,6 +1,6 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Support;
+namespace MaherAlmatari\FilamentShield\Support;
 
 class Utils
 {
@@ -26,7 +26,7 @@ class Utils
 
     public static function isAuthProviderConfigured(): bool
     {
-        return in_array("BezhanSalleh\FilamentShield\Traits\HasFilamentShield", class_uses(static::getAuthProviderFQCN()))
+        return in_array("MaherAlmatari\FilamentShield\Traits\HasFilamentShield", class_uses(static::getAuthProviderFQCN()))
         || in_array("Spatie\Permission\Traits\HasRoles", class_uses(static::getAuthProviderFQCN())) ;
     }
 }

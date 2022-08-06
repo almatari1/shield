@@ -1,8 +1,8 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Resources\RoleResource\Pages;
+namespace MaherAlmatari\FilamentShield\Resources\RoleResource\Pages;
 
-use BezhanSalleh\FilamentShield\Resources\RoleResource;
+use MaherAlmatari\FilamentShield\Resources\RoleResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Arr;
@@ -12,6 +12,8 @@ use Spatie\Permission\Models\Permission;
 
 class EditRole extends EditRecord
 {
+    use EditRecord\Concerns\Translatable;
+
     protected static string $resource = RoleResource::class;
 
     public Collection $permissions;
@@ -19,6 +21,7 @@ class EditRole extends EditRecord
     protected function getActions(): array
     {
         return [
+            Actions\LocaleSwitcher::make(),
             Actions\DeleteAction::make(),
         ];
     }

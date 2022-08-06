@@ -1,10 +1,11 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Resources;
+namespace MaherAlmatari\FilamentShield\Resources;
 
-use BezhanSalleh\FilamentShield\FilamentShield;
-use BezhanSalleh\FilamentShield\Resources\RoleResource\Pages;
-use BezhanSalleh\FilamentShield\Support\Utils;
+use App\Models\Role;
+use MaherAlmatari\FilamentShield\FilamentShield;
+use MaherAlmatari\FilamentShield\Resources\RoleResource\Pages;
+use MaherAlmatari\FilamentShield\Support\Utils;
 use Closure;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -16,10 +17,15 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+use Filament\Forms\Components\BelongsToSelect;
+use Filament\Forms\Components\Hidden;
+use Filament\Resources\Concerns\Translatable;
+
+// use Spatie\Permission\Models\Role;
 
 class RoleResource extends Resource
 {
+    use Translatable;
     protected static ?string $model = Role::class;
 
     protected static ?string $recordTitleAttribute = 'name';
@@ -36,11 +42,20 @@ class RoleResource extends Resource
                                     ->label(__('filament-shield::filament-shield.field.name'))
                                     ->required()
                                     ->maxLength(255),
-                                Forms\Components\TextInput::make('guard_name')
-                                    ->label(__('filament-shield::filament-shield.field.guard_name'))
-                                    ->default(config('filament.auth.guard'))
-                                    ->nullable()
-                                    ->maxLength(255),
+
+                       BelongsToSelect::make('currency_id')
+                                ->label(__('filament-shield::filament-shield.column.user_type_id'))
+                                ->required()
+                                ->relationship('user_type', 'name'),
+
+
+                        Hidden::make('guard_name')->default(config('filament.auth.guard')),
+                        //    Forms\Components\TextInput::make('guard_name')
+                        //             ->label(__('filament-shield::filament-shield.field.guard_name'))
+                        //             ->default(config('filament.auth.guard'))
+                        //             ->nullable()
+                        //             ->maxLength(255),
+
                                 Forms\Components\Toggle::make('select_all')
                                     ->onIcon('heroicon-s-shield-check')
                                     ->offIcon('heroicon-s-shield-exclamation')
@@ -132,6 +147,11 @@ class RoleResource extends Resource
                     ->formatStateUsing(fn ($state): string => Str::headline($state))
                     ->colors(['primary'])
                     ->searchable(),
+
+                  Tables\Columns\TextColumn::make('user_type.name')
+                      ->label(__('filament-shield::filament-shield.column.user_type_id'))
+                      ->searchable(),
+
                 Tables\Columns\BadgeColumn::make('guard_name')
                     ->label(__('filament-shield::filament-shield.column.guard_name')),
                 Tables\Columns\BadgeColumn::make('permissions_count')
@@ -182,7 +202,7 @@ class RoleResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        return __('filament-shield::filament-shield.nav.group');
+        return config('filament-shield.navigation.group');
     }
 
     protected static function getNavigationLabel(): string

@@ -1,8 +1,8 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Commands;
+namespace MaherAlmatari\FilamentShield\Commands;
 
-use BezhanSalleh\FilamentShield\Support\Utils;
+use MaherAlmatari\FilamentShield\Support\Utils;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Artisan;
@@ -57,13 +57,13 @@ class MakeShieldInstallCommand extends Command
 
         if ($this->confirm('Would you like to show some love by starring the repo?', true)) {
             if (PHP_OS_FAMILY === 'Darwin') {
-                exec('open https://github.com/bezhanSalleh/filament-shield');
+                exec('open https://github.com/almatari1/filament-shield');
             }
             if (PHP_OS_FAMILY === 'Linux') {
-                exec('xdg-open https://github.com/bezhanSalleh/filament-shield');
+                exec('xdg-open https://github.com/almatari1/filament-shield');
             }
             if (PHP_OS_FAMILY === 'Windows') {
-                exec('start https://github.com/bezhanSalleh/filament-shield');
+                exec('start https://github.com/almatari1/filament-shield');
             }
 
             $this->line('Thank you!');

@@ -1,19 +1,28 @@
 <?php
 
-namespace BezhanSalleh\FilamentShield\Resources\RoleResource\Pages;
+namespace MaherAlmatari\FilamentShield\Resources\RoleResource\Pages;
 
-use BezhanSalleh\FilamentShield\Resources\RoleResource;
+use MaherAlmatari\FilamentShield\Resources\RoleResource;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission;
+use Filament\Pages\Actions;
 
 class CreateRole extends CreateRecord
 {
+    use CreateRecord\Concerns\Translatable;
     protected static string $resource = RoleResource::class;
-
+    protected function getActions(): array
+    {
+        return [
+            Actions\LocaleSwitcher::make()
+        ];
+    }
     public Collection $permissions;
+
+
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
@@ -37,4 +46,9 @@ class CreateRole extends CreateRecord
 
         $this->record->syncPermissions($permissionModels);
     }
+
+
+
+
+
 }

@@ -12,6 +12,8 @@ return [
     'column.roles' => 'Roles',
     'column.permissions' => 'Permissions',
     'column.updated_at' => 'Updated At',
+    'column.user_type_id' => 'user_type',
+
 
     /*
     |--------------------------------------------------------------------------
