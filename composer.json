@@ -1,5 +1,5 @@
 {
-    "name": "maheralmatari/filament-shield",
+    "name": "maheralmatari/shield",
     "description": "Filament support for `spatie/laravel-permission`.",
     "keywords": [
         "MaherAlmatari",
@@ -13,7 +13,7 @@
         "rbac",
         "security"
     ],
-    "homepage": "https://github.com/almatari1/filament-shield",
+    "homepage": "https://github.com/almatari1/shield",
     "license": "MIT",
     "authors": [
         {
