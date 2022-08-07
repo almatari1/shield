@@ -20,6 +20,8 @@ use Spatie\Permission\Models\Permission;
 use Filament\Forms\Components\BelongsToSelect;
 use Filament\Forms\Components\Hidden;
 use Filament\Resources\Concerns\Translatable;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 
 // use Spatie\Permission\Models\Role;
 
@@ -43,10 +45,10 @@ class RoleResource extends Resource
                                     ->required()
                                     ->maxLength(255),
 
-                       BelongsToSelect::make('currency_id')
-                                ->label(__('filament-shield::filament-shield.column.user_type_id'))
-                                ->required()
-                                ->relationship('user_type', 'name'),
+                    //    BelongsToSelect::make('user_type_id')
+                    //             ->label(__('filament-shield::filament-shield.column.user_type_id'))
+                    //             ->required()
+                    //             ->relationship('user_type', 'name'),
 
 
                         Hidden::make('guard_name')->default(config('filament.auth.guard')),
@@ -171,6 +173,23 @@ class RoleResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
+    }
+
+
+
+    public static function getEloquentQuery(): Builder
+    {
+        $type = match(Auth::user()->user_type_id) {
+
+            1 => 'All',
+            2 =>  "Provider",
+            3 =>  'Agent',
+        };
+
+        // dd($type ,Auth::user()->user_type_id);
+
+        return parent::getEloquentQuery()->$type();
+        // ->where('user_type_id', Auth::user()->user_type_id);
     }
 
     public static function getRelations(): array
