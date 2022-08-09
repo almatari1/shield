@@ -269,6 +269,8 @@ class RoleResource extends Resource
 
         //     return null;
         // }
+        //Author: Your Name <maheralmatri@gmail.com>
+        //Author: Maher Almatari <maheralmatri@gmail.com>
 
         // dd(Route::currentRouteName(), Route::getCurrentRoute());
         if (Route::currentRouteName() != "filament.resources.shield/roles.create") {
@@ -278,11 +280,13 @@ class RoleResource extends Resource
             $resource = \App\Models\Resource::where('user_type_id', $role->user_type_id)->pluck('name')->ToArray();
             $getResources =  collect(FilamentShield::getResources())->only($resource);
         } else {
-            $role = Role::find(1);
-            $getResources = FilamentShield::getResources();
+                // dd(Auth::user()->roles()->first());
+            $role = Auth::user()->roles()->first();
+            $resource = \App\Models\Resource::where('user_type_id', $role->user_type_id)->pluck('name')->ToArray();
+            $getResources =  collect(FilamentShield::getResources())->only($resource);
         }
 
-        // dd($getResources , $resource );
+        // dd($getResources );
         return collect($getResources)->sortKeys()->reduce(function ($entities, $entity) use($role ) {
               $entities[] = Forms\Components\Card::make()
                     ->extraAttributes(['class' => 'border-0 shadow-lg'])
